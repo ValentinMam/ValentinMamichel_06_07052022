@@ -19,7 +19,7 @@ function photographerFactory(data) {
     const taglineParagraph = document.createElement("p");
     taglineParagraph.textContent = tagline;
     taglineParagraph.setAttribute("class", "photographerTagline");
-    // phoptographer price
+    // photographer price
     const priceParagraph = document.createElement("p");
     priceParagraph.textContent = price + "€/jour";
     priceParagraph.setAttribute("class", "photographerPrice");
@@ -30,6 +30,8 @@ function photographerFactory(data) {
     article.appendChild(h3);
     article.appendChild(taglineParagraph);
     article.appendChild(priceParagraph);
+
+    // return article "photographer"
     return article;
   }
   return { getUserCardDOM };
