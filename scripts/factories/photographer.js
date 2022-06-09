@@ -15,11 +15,21 @@ function photographerFactory(data) {
     // photographer location => city & country
     const h3 = document.createElement("h3");
     h3.textContent = `${city}, ${country}`;
+    // photographer tagline
+    const taglineParagraph = document.createElement("p");
+    taglineParagraph.textContent = tagline;
+    taglineParagraph.setAttribute("class", "photographerTagline");
+    // phoptographer price
+    const priceParagraph = document.createElement("p");
+    priceParagraph.textContent = price + "€/jour";
+    priceParagraph.setAttribute("class", "photographerPrice");
 
     // article childs
     article.appendChild(img);
     article.appendChild(h2);
     article.appendChild(h3);
+    article.appendChild(taglineParagraph);
+    article.appendChild(priceParagraph);
     return article;
   }
   return { getUserCardDOM };
