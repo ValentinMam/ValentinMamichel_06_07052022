@@ -1,13 +1,15 @@
-// HOMEPAGE => photographers
+// ================== HOME PAGE
 
-function photographerFactory(data) {
+export function photographerFactory(data) {
   // const of photographers datas
-  const { name, id, city, country, tagline, price, portrait } = data;
+  const { name, portrait, tagline, city, country, price, id } = data;
+
   const picture = `assets/photographers/account/${portrait}`;
 
   function getUserCardDOM() {
     // link which contains photographer elements
     const article = document.createElement("a");
+
     // tabIndex for navigation with keyboard
     article.tabIndex = 0;
     article.href = "#";
@@ -26,21 +28,20 @@ function photographerFactory(data) {
     h3.textContent = `${city}, ${country}`;
 
     // photographer tagline
-    const taglineParagraph = document.createElement("p");
-    taglineParagraph.textContent = tagline;
-    taglineParagraph.setAttribute("class", "photographerTagline");
+    const my1p = document.createElement("p");
+    my1p.textContent = tagline;
 
     // photographer price
-    const priceParagraph = document.createElement("p");
-    priceParagraph.textContent = price + "€/jour";
-    priceParagraph.setAttribute("class", "photographerPrice");
+    const my2p = document.createElement("p");
+    my2p.textContent = price + "€/jour";
+    my2p.setAttribute("class", "myPrice");
 
     // article childs
     article.appendChild(img);
     article.appendChild(h2);
     article.appendChild(h3);
-    article.appendChild(taglineParagraph);
-    article.appendChild(priceParagraph);
+    article.appendChild(my1p);
+    article.appendChild(my2p);
 
     // go on photographer page = click
     article.addEventListener("click", function () {
@@ -57,3 +58,7 @@ function photographerFactory(data) {
   }
   return { getUserCardDOM };
 }
+
+// ================== PHOTOGRAPHER PAGE -- HEADER SOON
+
+const modalbg = document.querySelector(".bground");

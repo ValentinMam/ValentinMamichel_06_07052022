@@ -1,13 +1,13 @@
-// function getPhotographers() {
-//   return fetch(
-//     "https://valentinmam.github.io/ValentinMamichel_06_07052022/data/photographers.json"
-//   )
-//     .then((response) => response.json())
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }
+// fetch datas on github page : https://valentinmam.github.io/ValentinMamichel_06_07052022
 
-// export { getPhotographers };
+function getPhotographers() {
+  return fetch(
+    "https://valentinmam.github.io/ValentinMamichel_06_07052022/data/photographers.json"
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
-// api will be called in pages/index.js
+export { getPhotographers };
