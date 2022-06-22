@@ -68,6 +68,54 @@
         <!-- medias captions : text -->
         <div id="caption"></div>
       </div>
+      <div class="bground">
+        <div class="content">
+          <span class="close1"></span>
+          <div class="modal-body">
+            <h1 class="modalh2">Contactez-moi</h1>
+            <form name="reserve" action="index.html" id="formulaire">
+              <div class="formData" data-error-visible="false">
+                <label for="first">Prénom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                  minlength="2"
+                  required
+                /><br />
+              </div>
+              <div class="formData" data-error-visible="false">
+                <label for="last">Nom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="last"
+                  name="last"
+                  minlength="2"
+                  required
+                /><br />
+              </div>
+              <div class="formData" data-error-visible="false">
+                <label for="email">E-mail</label><br />
+                <input
+                  class="text-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                /><br />
+              </div>
+              <div class="formData" data-error-visible="false">
+                <label for="story">Votre Message</label>
+                <textarea id="story" name="story" rows="5" cols="56"></textarea>
+              </div>
+              <input class="btn-submit button" type="submit" value="Envoyer" />
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- script type = module for import / export -->
     <script type="module" src="scripts/utils/contactForm.js"></script>
