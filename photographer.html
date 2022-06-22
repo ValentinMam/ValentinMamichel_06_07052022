@@ -37,16 +37,36 @@
           <option value="popularity">Popularité</option>
         </select>
       </div>
+
       <!-- medias gallery -->
       <div
         class="photographer_medias"
         aria-label="Galerie des photos et vidéos"
       ></div>
-      <!--likes container-->
+      <!-- likes container -->
       <div class="likes_container">
         <div id="likes"></div>
         <div id="hearts"></div>
         <div id="price"></div>
+      </div>
+      <!-- MODAL --CARROUSSEL -->
+      <div
+        id="carroussel_modal"
+        class="modal"
+        aria-hidden="true"
+        aria-describedby="carrousel"
+      >
+        <!-- close button : &times; = cross -->
+        <button class="close">&times;</button>
+        <!-- modal content : medias  -->
+        <div class="modal-content">
+          <div class="carousel-container"></div>
+        </div>
+        <!-- navigation button : &#10094; and &#10095; = arrows  -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <!-- medias captions : text -->
+        <div id="caption"></div>
       </div>
     </main>
     <!-- script type = module for import / export -->
