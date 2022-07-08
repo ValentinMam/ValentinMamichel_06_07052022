@@ -1,76 +1,916 @@
-#contact_modal {
-    display: none;
+@import url("normalize.css");
+html {
+  font-family: "DM Sans", sans-serif !important;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
+#main {
+  width: 100%;
+  margin-bottom: unset;
+}
+
+header {
+  height: 90px;
+}
+
+a.logo {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+/* Section photographHeader */
+.logo #logo {
+  margin-left: 5%;
+  height: 50px;
+}
+
+article.photograph-profil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  font-size: 1.8em;
+}
+
+.photographProfil {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+  justify-content: center;
+}
+
+.photographProfil h1 {
+  height: 8%;
+  color: #d3573c;
+  font-size: 200%;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.photographProfil span {
+  font-size: 24px;
+  color: #911c1c;
+  margin-bottom: 30px;
+}
+
+.photographProfil p {
+  font-size: 18px;
+  color: #525252;
+}
+
+.divContactButton {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.contactButton {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+}
+
+#photographPortrait {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.photographPhotoProfil {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 3px 3px 5px -1px #00000040;
+}
+
+/* Section Aside Formulaire */
+#formulaire {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-formulaire {
+  /* position: absolute; */
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+
+#photographHeader {
+  background-color: #fafafa;
+  height: 300px;
+  display: flex;
+  margin: 0 5%;
+  border-radius: 5px;
+}
+
+#form__close {
+  background-color: #db8876;
+  border: none;
 }
 
 .modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+  border-radius: 5px;
+  background-color: #db8876;
+  /* width: 700px; */
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  top: 10px;
+  left: 420px;
+  box-shadow: 3px 2px 2px -1px #00000040;
 }
 
 .modal header {
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20px;
 }
 
 .modal header img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modal header h2 {
-    font-size: 64px;
-    font-weight: normal;
-    text-align: center;
+  font-size: 48px;
+  font-weight: normal;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+form h1 {
+  color: #000000;
+  font-weight: 400;
+  font-size: 48px;
+  margin-top: -10px;
 }
 
 form label {
-    color: #312E2E;
-    font-size: 36px;
+  color: #312e2e;
+  font-size: 24px;
+
+  margin-top: -10px;
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+  display: flex;
+
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin: 10px 0 10px 0;
 }
 
 form input {
+  width: 100%;
+  height: 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+form textarea {
+  width: 100%;
+  height: 72px;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  font-size: 24px;
+}
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 18px;
+  color: #ffffff;
+  display: block;
+  /* margin-top: 5px; */
+  /* margin-bottom: 7px; */
+  text-align: left;
+  line-height: 0.1;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+
+.formData[data-error-visible="true"] .text-control {
+  border: 2px solid #000000;
+}
+
+.contact_button {
+  width: 170px;
+  height: 48px;
+  color: #fff;
+  background-color: #911c1c;
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+/* Section filter-profil */
+.filter-profil {
+  width: 100%;
+  display: flex;
+  height: 100px;
+}
+
+.filter-title {
+  height: 100%;
+}
+
+.filter_selection {
+  height: 100%;
+  width: 100%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+
+label#filter-id {
+  width: 104px;
+  font-weight: 700;
+}
+
+select#filters-select {
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+}
+
+.filter_selection #filters-select {
+  width: 170px;
+  height: 40px;
+  font-weight: 500;
+  background-color: #901c1c !important;
+  color: #fff;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+
+.filter-container {
+  position: relative;
+}
+
+.on::after {
+  background-color: #901c1c !important;
+  background: url(/assets/icons/down_arrow.svg) center center no-repeat;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+
+#filters-select option:focus-visible {
+  background-color: #0000002c;
+}
+
+/*Section wrapper */
+.wrapper {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 60px;
+  margin: 0 5%;
+  justify-content: space-between;
+}
+
+.gallery {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: unset;
+}
+
+.gallery .image {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.gallery .image .link-media {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  height: 300px;
+  color: #901c1c;
+  border-radius: 5px;
+  box-shadow: 3px 2px 2px -2px #00000040;
+}
+
+.gallery .image img {
+  width: 100%;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  object-position: 0 30%;
+}
+.gallery .image video {
+  width: 100%;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  object-position: 0 30%;
+}
+
+.gallery .image:hover img {
+  transform: scale(1.1);
+}
+
+.galleryDescription {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: #901c1c;
+  margin: 5px 0 15px 0;
+}
+
+.galleryDescription h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+span.cardsLikes {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+button.cardsButton {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: unset;
+  border: unset;
+  width: 30%;
+  justify-content: flex-end;
+}
+
+button.cardsButton .cardsLikes {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+  color: #901c1c;
+}
+
+button.cardsButton .far {
+  color: #901c1c;
+  width: 15px;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 10;
+  overflow: auto;
+  animation: lightboxIn 0.5s;
+}
+
+.lightbox.fadeOut {
+  opacity: 0;
+}
+
+.lightbox__next,
+.lightbox__prev {
+  border: none;
+  background: url(/assets/icons/right_arrow.svg) center center / 40px 48px
+    no-repeat;
+  color: #911c1c;
+  width: 50px;
+  height: 90%;
+  position: fixed;
+  top: 0;
+  margin-top: -14px;
+  z-index: 11;
+  cursor: pointer;
+  right: 0;
+  margin-top: 10px;
+  margin-top: 5%;
+}
+
+.lightbox__prev {
+  right: auto;
+  left: 4%;
+  transform: rotate(180deg);
+}
+
+.lightbox__next {
+  right: 4%;
+}
+
+.lightbox__close {
+  border: none;
+  background: url(/assets/icons/close.svg) center center / 100% 100% no-repeat;
+  position: fixed;
+  top: 10px;
+  right: 4%;
+  width: 40px;
+  height: 40px;
+  z-index: 12;
+  margin-top: 3%;
+}
+
+.lightbox button {
+  cursor: pointer;
+  text-indent: -10000px;
+  max-height: 80vh;
+}
+
+.lightbox__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 80vh;
+  margin-top: 6%;
+  width: 80vw;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.lightbox__container img,
+.lightbox__container video {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  /* object-fit: contain; */
+  animation: lightboxIn 0.5s;
+  box-shadow: 3px 2px 2px -1px #00000040;
+}
+
+h2.lightbox-title {
+  height: 100px;
+  width: 100%;
+  color: #911c1c;
+}
+
+.lightbox__container h2.cardsTitle {
+  width: 80%;
+  color: #901c1c;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 2vh;
+}
+
+.lightbox__loader {
+  width: 38px;
+  height: 38px;
+  opacity: 0.8;
+  background: url(/assets/icons/loader.svg) center center no-repeat;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Section profil-likes-price */
+.profil-like-photograph {
+  width: 376px;
+  display: flex;
+  justify-content: center;
+  margin-right: 3%;
+  background-color: #db8876;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  position: fixed;
+  bottom: 0;
+  height: 65px;
+}
+
+.profil-likes {
+  width: 45%;
+}
+
+.profil-likes-price {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 10%;
+}
+
+span#profil-likes_heart,
+.profil-price {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* RESPONSIVE TABLET */
+
+@media screen and (max-width: 992px) {
+  /* !Pages Accueil */
+  header {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  header h1 {
+    font-size: 26px;
+    display: flex;
     width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
+    justify-content: center;
+    margin: 0 0 20px 0;
+  }
+
+  .photographer_section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* !Pages Photographes */
+  /* header */
+  .logo #logo {
+    height: 40px;
+    margin-top: 20px;
+  }
+
+  header h1 {
+    margin-top: 22px;
+  }
+
+  /* Section photograph-header */
+  .photographHeader {
+    flex-direction: column;
+    align-items: center;
+    height: 380px;
+  }
+
+  .PhotographProfil {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    margin: unset !important;
+  }
+
+  #photographPortrait {
+    justify-content: center;
+    width: 30% !important;
+  }
+
+  .photographPhotoProfil {
+    width: 120px;
+    height: 120px;
+  }
+
+  .photographProfil h1 {
+    display: flex;
+    justify-content: center;
+    margin: unset;
+    height: 20%;
+    /* font-size: 35px; */
+    justify-content: flex-start;
+  }
+
+  .photographProfil span {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .photographProfil p {
+    display: flex;
+    justify-content: flex-start;
+    line-height: 20px;
+  }
+  /* .divContactButton {
+  } */
+  .contactButton {
+    height: 60px;
+    width: 140px;
+    font-size: 16px;
+  }
+  #photographPortrait {
+    width: 22%;
+  }
+
+  /* Aside Formulaire */
+  .modal {
+    width: 600px;
+  }
+
+  .modal header img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal header {
+    display: flex;
+    flex-direction: row;
+    margin: unset;
+  }
+
+  .modal header h2 {
+    font-size: 35px;
+    margin-bottom: unset;
+  }
+
+  form h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  .contact_button {
+    width: 150px;
+    height: 60px;
+    padding: unset;
+  }
+
+  form label {
+    font-size: 30px;
+  }
+  form input {
+    height: 44px;
+    font-size: 18px;
+  }
+  form div {
+    margin: 12px 0 10px 0;
+  }
+  form textarea {
+    height: 115px;
+    font-size: 18px;
+  }
+  .formData[data-error]::after {
+    font-size: 16px;
+  }
+
+  /* Section lightbox */
+  .wrapper {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .gallery {
+    width: 100%;
+  }
+
+  .galleryDescription {
+    margin: unset;
+  }
+
+  .lightboxDescription p {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .lightbox__container h2.cardsTitle {
+    font-size: 20px;
+  }
+
+  /* Section profil-like-price */
+  .profil-like-photograph {
+    width: 40%;
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .lightbox__close {
+    top: 25px;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media screen and (max-width: 768px) {
+  /* !Pages Accueil */
+  .photographer_section {
+    grid-template-columns: 1fr;
+  }
+
+  /* !Pages Photographes */
+  html {
+    height: 100vh;
+  }
+
+  #main {
+    margin-top: -20px;
+  }
+
+  /* header */
+  header {
+    margin: 20px 0 70px 0;
+  }
+  header h1 {
+    margin-top: 22px;
+  }
+  .logo #logo {
+    height: 70%;
+  }
+  a.logo {
+    justify-content: center !important;
+  }
+
+  /* Section photograph-header */
+  #photographHeader {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  .photographProfil {
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    margin-left: unset;
+    width: 100%;
+  }
+
+  .photographProfil h1 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+
+  .photographProfil span {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .photographProfil p {
+    text-align: center;
+  }
+
+  .contactButton {
+    font-size: 16px !important;
+    height: 40px;
+  }
+
+  /* Aside Formulaire */
+  .filter_selection {
+    padding-right: unset;
+    width: 90%;
+  }
+
+  /* Aside Formulaire */
+  .modal {
+    width: 300px;
+  }
+  .modal header {
+    margin-bottom: unset;
+  }
+  .modal header img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .modal header h2 {
+    font-size: 24px;
+    margin-top: unset;
+  }
+
+  form {
+    margin-top: unset;
+  }
+
+  form h1 {
+    font-size: 24px;
+  }
+
+  .contact_button {
+    width: 105px;
+    height: 40px;
+    padding: unset;
+    font-size: 14px;
+  }
+
+  form label {
+    font-size: 20px;
+  }
+
+  form input {
+    height: 35px;
+  }
+  form textarea {
+    height: 78px;
+    font-size: 18px;
+  }
+  .formData[data-error]::after {
+    font-size: 14px;
+  }
+
+  /* Section filter-profil */
+  .filter-profil {
+    flex-direction: column;
+    font-size: 18px;
+  }
+
+  /* Section profil-likes-price */
+  .profil-likes-price {
+    justify-content: flex-end;
+    width: 88%;
+  }
+
+  .profil-likes {
+    width: 35%;
+  }
+
+  .profil-like-photograph {
+    width: 70%;
+    font-size: 16px;
+    position: unset;
+    margin-right: unset;
+  }
+
+  span#profil-likes_heart,
+  .profil-price {
+    font-size: 16px;
+  }
+
+  /* Section wrapper */
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .galleryDescription h2 {
+    font-size: 20px;
+  }
+
+  button.cardsButton {
+    font-size: 18px;
+  }
+
+  .lightbox__close {
+    width: 16px;
+    height: 16px;
+  }
+
+  .lightbox__next,
+  .lightbox__prev {
+    background: url(/assets/icons/right_arrow\ copy.svg) center center / 16px
+      24px no-repeat;
+  }
+
+  .lightbox__prev {
+    left: 1%;
+  }
+
+  .lightbox__next {
+    right: 1%;
+  }
+
+  h2.cardsTitle {
+    font-size: 20px;
+  }
 }
