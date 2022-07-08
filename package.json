@@ -1,0 +1,26 @@
+{
+  "name": "valentinmamichel_06_07052022",
+  "version": "1.0.0",
+  "description": "project 6 - Openclassrooms",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValentinMam/ValentinMamichel_06_07052022.git"
+  },
+  "author": "Valentin M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValentinMam/ValentinMamichel_06_07052022/issues"
+  },
+  "homepage": "https://github.com/ValentinMam/ValentinMamichel_06_07052022#readme",
+  "dependencies": {
+    "eslint": "^8.19.0"
+  }
+}
